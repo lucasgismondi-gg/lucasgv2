@@ -1,7 +1,11 @@
+import { Link } from "@/components/ui/link"
+
 function App() {
 
   return (
-    <div>Lucas Gismondi</div>
+    <div>
+      <Link href="/">Lucas Gismondi</Link>
+    </div>
   )
 }
 
