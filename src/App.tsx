@@ -45,7 +45,7 @@ function App() {
           <Link className="text-xs" href="/">X</Link>
           <Link className="text-xs" href="/">Instagram</Link>
         </div>
-        <p className="text-xs">2025</p>
+        <p className="text-xs">{`< 2025 >`}</p>
       </div>
     </div>
   )
