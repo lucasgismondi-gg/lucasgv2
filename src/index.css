@@ -65,6 +65,8 @@
   }
 }
 
+/* Border animation option for regular containers */
+
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -72,9 +74,6 @@
 }
 
 .card {
-  background-color: black;
-  height: 100px;
-  width: 100px;
   position: relative;
 }
 
@@ -88,9 +87,9 @@
   left: 50%;
   translate: -50% -50%;
   z-index: -1;
-  padding: 2px;
+  padding: 1px;
   box-sizing: content-box;
-  animation: 10s spin linear infinite;
+  animation: 3s spin linear infinite;
 }
 
 @keyframes spin {
@@ -99,5 +98,41 @@
   }
   to {
     --angle: 360deg;
+  }
+}
+
+/* Border animation option for horizontally long containers */
+
+@property --left {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+
+.border-animation {
+  position: relative;
+}
+
+.border-animation::after, .border-animation::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(to right, transparent, #00FF88);
+  top: calc(50% - 1px);
+  left: var(--left);
+  translate: -50% -50%;
+  z-index: -1;
+  padding-top: 1px;
+  box-sizing: content-box;
+  animation: 3s move linear infinite;
+}
+
+@keyframes move {
+  from {
+    --left: 0%;
+  }
+  to {
+    --left: 100%;
   }
 }
