@@ -1,4 +1,23 @@
 import { Link } from "@/components/ui/link"
+import Globe, { GlobeMethods } from 'react-globe.gl';
+import { useEffect, useState, useRef } from "react";
+import globeTopology from "./globe-topology.json";
+
+// TODO: Marquee component
+// TODO: Image hover component
+// TODO: Get all images for experience, frontend, backend, cloud, about me
+// TODO: Optimize for mobile
+// TODO: Add links where appropriate
+// TODO: Globe component
+// TODO: Add experience section interactions
+// TODO: Add better font
+// TODO: Add a nice cursor
+// TODO: Add stock price marquee to footer
+
+const GLOBE_PRIMARY_COLOR = "#00FF88";
+const GLOBE_BACKGROUND_COLOR = "#0A0A0A";
+const GLOBE_INACTIVE_COLOR = "#303030";
+const VISITED_COUNTRIES = ["Canada", "United States of America", "Mexico", "Thailand", "Malaysia", "Indonesia", "Portugal", "Spain", "France", "United Kingdom", "Italy", "Austria", "Dominican Rep.", "Bahamas", "Vietnam"]
 
 function Header() {
   return (
@@ -32,6 +51,50 @@ function Experience() {
 }
 
 function AboutMe() {
+  const [globeWidth, setGlobeWidth] = useState(300);
+  const [globeHeight, setGlobeHeight] = useState(300);
+  const globeContainerRef = useRef<HTMLDivElement>(null);
+  const globeRef = useRef<GlobeMethods>(undefined);
+
+  useEffect(() => {
+    if (globeRef.current) {
+      globeRef.current.controls().autoRotate = true;
+      globeRef.current.controls().autoRotateSpeed = -1;
+
+      globeRef.current.pointOfView({ lat: 40, lng: -105.2551, altitude: 2 }, 0);
+    }
+
+    if (globeContainerRef.current) {
+      setGlobeWidth(globeContainerRef.current.clientWidth);
+      setGlobeHeight(globeContainerRef.current.clientHeight);
+    }
+
+    const handleResize = () => {
+      if (globeContainerRef.current) {
+        setGlobeWidth(globeContainerRef.current.clientWidth);
+        setGlobeHeight(globeContainerRef.current.clientHeight);
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [globeContainerRef.current, globeRef.current])
+
+  const handleGetPolygonColor = (feature: any) => {
+    if (VISITED_COUNTRIES.includes(feature.properties.NAME)) {
+      return GLOBE_PRIMARY_COLOR;
+    }
+
+    return GLOBE_INACTIVE_COLOR;
+  }
+
+  const handlePolygonHover = () => {
+    return;
+  }
+
   return (
     <div className="flex flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4">
       <div className="w-1/2 flex flex-col gap-[1px]">
@@ -42,8 +105,21 @@ function AboutMe() {
           <p className="text-xs fade-in" style={{ animationDelay: '0.6s' }}>Core principles</p>
         </div>
       </div>  
-      <div className="w-1/2 flex justify-center items-center p-2 bg-background">
-        <p className="text-xs fade-in" style={{ animationDelay: '0.9s' }}>Interactive Globe</p>
+      <div className="w-1/2 bg-background">
+        <div ref={globeContainerRef} className="w-full h-full fade-in flex justify-center items-center" style={{ animationDelay: '0.9s' }}>
+          <Globe 
+            ref={globeRef}
+            width={globeWidth} 
+            height={globeHeight}
+            backgroundColor={GLOBE_BACKGROUND_COLOR}
+            polygonsData={globeTopology.features}
+            polygonStrokeColor={handleGetPolygonColor}
+            polygonCapColor={() => 'transparent'}
+            polygonAltitude={0}
+            atmosphereColor={GLOBE_PRIMARY_COLOR}
+            onPolygonHover={handlePolygonHover}
+          />
+        </div>
       </div>
     </div>
   )
