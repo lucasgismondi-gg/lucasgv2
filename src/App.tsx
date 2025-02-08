@@ -9,6 +9,7 @@ import Footer from "@/components/Footer"
 // TODO: Add experience section interactions
 // TODO: Add better font
 // TODO: Add a nice cursor
+// TODO: Get images for Italy and Austria
 // TODO: Add stock price marquee to footer
 
 function App() {
