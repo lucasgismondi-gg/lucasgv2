@@ -1,5 +1,5 @@
 import Globe, { GlobeMethods } from 'react-globe.gl';
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, ReactHTMLElement } from "react";
 import globeTopology from "@/globe-topology.json";
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoscroll from 'embla-carousel-auto-scroll'
@@ -8,7 +8,75 @@ import { Hover3dEffect } from "@/components/ui/hover-3d-effect"
 const GLOBE_PRIMARY_COLOR = "#00FF88";
 const GLOBE_BACKGROUND_COLOR = "#0A0A0A";
 const GLOBE_INACTIVE_COLOR = "#303030";
-const VISITED_COUNTRIES = ["Canada", "United States of America", "Mexico", "Thailand", "Malaysia", "Indonesia", "Portugal", "Spain", "France", "United Kingdom", "Italy", "Austria", "Dominican Rep.", "Bahamas", "Vietnam"]
+const VISITED_COUNTRIES = ["Canada", "United States of America", "Thailand", "Malaysia", "Indonesia", "Portugal", "Spain", "France", "United Kingdom", "Dominican Rep.", "Vietnam"]
+const VISITED_COUNTRY_IMAGES = {
+    "Canada": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "United States of America": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "Thailand": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "Malaysia": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "Indonesia": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "Portugal": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "Spain": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "France": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "United Kingdom": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "Dominican Rep.": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ],
+    "Vietnam": [
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+        { src: "/images/about-me/bunkers.jpg", alt: "Lucas at Bunkers" },
+    ]
+}
 
 export default function AboutMe() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoscroll({ speed: 0.5, playOnInit: true, stopOnMouseEnter: true, startDelay: 0 })])
@@ -123,6 +191,22 @@ function BasedOnEarth() {
         return;
         }
 
+    const renderTooltip = (feature: any) => {
+        if (!VISITED_COUNTRIES.includes(feature.properties.NAME)) return null as unknown as ReactHTMLElement<HTMLElement>;
+        
+        const images = VISITED_COUNTRY_IMAGES[feature.properties.NAME as keyof typeof VISITED_COUNTRY_IMAGES];
+
+        return (
+            <div className="grid grid-cols-2 gap-1 bg-transparent min-w-64 p-0">
+                {images.map((image, index) => (
+                    <div className="col-span-1 relative h-32 w-32 flex justify-center items-center overflow-hidden rounded">
+                        <img src={image.src} alt={image.alt} key={index} className="absolute w-full" />
+                    </div>
+                ))}
+            </div>
+        ) as ReactHTMLElement<HTMLElement>
+    }
+
     return (
         <div ref={globeContainerRef} className="w-full h-full fade-in flex justify-center items-center" style={{ animationDelay: '0.9s' }}>
           <Globe 
@@ -132,10 +216,12 @@ function BasedOnEarth() {
             backgroundColor={GLOBE_BACKGROUND_COLOR}
             polygonsData={globeTopology.features}
             polygonStrokeColor={handleGetPolygonColor}
+            polygonSideColor={handleGetPolygonColor}
             polygonCapColor={() => 'transparent'}
-            polygonAltitude={0}
+            polygonAltitude={0.002}
             atmosphereColor={GLOBE_PRIMARY_COLOR}
             onPolygonHover={handlePolygonHover}
+            polygonLabel={renderTooltip}
           />
         </div>
     )
