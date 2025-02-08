@@ -103,17 +103,17 @@ export default function AboutMe() {
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.9s' }}>
+              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.7s' }}>
                 <img src="/images/about-me/surfing.jpg" alt="Lucas surfing" className="absolute object-cover" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.7s' }}>
+              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.8s' }}>
                 <img src="/images/about-me/thailand.jpg" alt="Lucas in Thailand" className="absolute object-cover" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.8s' }}>
+              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.9s' }}>
                 <img src="/images/about-me/waterfall.jpg" alt="Lucas at a waterfall in Thailand" className="absolute object-cover" />
               </div>
             </Hover3dEffect>
@@ -149,6 +149,8 @@ export default function AboutMe() {
 function BasedOnEarth() {
     const [globeWidth, setGlobeWidth] = useState(300);
     const [globeHeight, setGlobeHeight] = useState(300);
+    const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+    const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
     const globeContainerRef = useRef<HTMLDivElement>(null);
     const globeRef = useRef<GlobeMethods>(undefined);
 
@@ -177,27 +179,56 @@ function BasedOnEarth() {
         return () => {
             window.removeEventListener('resize', handleResize);
         }
-        }, [globeContainerRef.current, globeRef.current])
+    }, [globeContainerRef.current, globeRef.current]);
 
-        const handleGetPolygonColor = (feature: any) => {
-        if (VISITED_COUNTRIES.includes(feature.properties.NAME)) {
-            return GLOBE_PRIMARY_COLOR;
+    useEffect(() => {
+
+        if (!hoveredCountry) return;
+
+        const handlePointerMove = (event: PointerEvent) => {
+            const { clientX, clientY } = event;
+            const { left, top } = globeContainerRef.current?.getBoundingClientRect() ?? { width: 0, height: 0, left: 0, top: 0 };
+
+            const tooltipWidth = 128 * 2; // 128 is the width of one image
+
+            const x = clientX - left - tooltipWidth - 20;
+            const y = clientY - top - tooltipWidth - 20;
+
+            setTooltipPosition({ x, y });
         }
 
-        return GLOBE_INACTIVE_COLOR;
-        }
+        window.addEventListener('pointermove', handlePointerMove);
 
-        const handlePolygonHover = () => {
-        return;
+        return () => {
+            window.removeEventListener('pointermove', handlePointerMove);
         }
+    }, [hoveredCountry]);
 
-    const renderTooltip = (feature: any) => {
-        if (!VISITED_COUNTRIES.includes(feature.properties.NAME)) return null as unknown as ReactHTMLElement<HTMLElement>;
-        
-        const images = VISITED_COUNTRY_IMAGES[feature.properties.NAME as keyof typeof VISITED_COUNTRY_IMAGES];
+    const handleGetPolygonColor = (feature: any) => {
+    if (VISITED_COUNTRIES.includes(feature.properties.NAME)) {
+        return GLOBE_PRIMARY_COLOR;
+    }
+
+    return GLOBE_INACTIVE_COLOR;
+    }
+
+    const handlePolygonHover = (polygon: any | null, _: any | null) => {
+        if (!globeRef.current) return;
+
+        if (polygon && VISITED_COUNTRIES.includes(polygon.properties.NAME)) {
+            globeRef.current.controls().autoRotate = false;
+            setHoveredCountry(polygon.properties.NAME);
+        } else {
+            globeRef.current.controls().autoRotate = true;
+            setHoveredCountry(null);
+        }
+    }
+
+    const renderTooltip = () => {
+        const images = VISITED_COUNTRY_IMAGES[hoveredCountry as keyof typeof VISITED_COUNTRY_IMAGES];
 
         return (
-            <div className="grid grid-cols-2 gap-1 bg-transparent min-w-64 p-0">
+            <div className="grid grid-cols-2 gap-1 bg-transparent min-w-64 p-0 absolute fade-in" style={{ top: tooltipPosition.y, left: tooltipPosition.x, animationDuration: '0.2s' }}>
                 {images.map((image, index) => (
                     <div className="col-span-1 relative h-32 w-32 flex justify-center items-center overflow-hidden rounded">
                         <img src={image.src} alt={image.alt} key={index} className="absolute w-full" />
@@ -208,7 +239,7 @@ function BasedOnEarth() {
     }
 
     return (
-        <div ref={globeContainerRef} className="w-full h-full fade-in flex justify-center items-center" style={{ animationDelay: '0.9s' }}>
+        <div ref={globeContainerRef} className="w-full h-full fade-in flex justify-center items-center relative" style={{ animationDelay: '0.9s' }}>
           <Globe 
             ref={globeRef}
             width={globeWidth} 
@@ -221,8 +252,8 @@ function BasedOnEarth() {
             polygonAltitude={0.002}
             atmosphereColor={GLOBE_PRIMARY_COLOR}
             onPolygonHover={handlePolygonHover}
-            polygonLabel={renderTooltip}
           />
+          {hoveredCountry && renderTooltip()}
         </div>
     )
 }
