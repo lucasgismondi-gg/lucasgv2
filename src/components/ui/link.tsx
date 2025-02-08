@@ -35,6 +35,8 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
       <Comp
         className={cn(linkVariants({ variant, size, className }))}
         ref={ref}
+        target="_blank"
+        rel="noopener noreferrer"
         {...props}
       />
     )

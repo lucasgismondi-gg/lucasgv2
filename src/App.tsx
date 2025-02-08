@@ -4,7 +4,6 @@ import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
 // TODO: Get all images for experience, frontend, backend, cloud, about me
-// TODO: Add links where appropriate
 // TODO: Optimize for mobile
 // TODO: Globe component
 // TODO: Add experience section interactions
