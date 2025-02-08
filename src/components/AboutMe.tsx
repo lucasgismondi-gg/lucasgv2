@@ -1,9 +1,8 @@
 import Globe, { GlobeMethods } from 'react-globe.gl';
 import { useEffect, useState, useRef, ReactHTMLElement } from "react";
 import globeTopology from "@/globe-topology.json";
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoscroll from 'embla-carousel-auto-scroll'
 import { Hover3dEffect } from "@/components/ui/hover-3d-effect"
+import { Marquee } from "@/components/ui/marquee"
 
 const GLOBE_PRIMARY_COLOR = "#00FF88";
 const GLOBE_BACKGROUND_COLOR = "#0A0A0A";
@@ -79,8 +78,6 @@ const VISITED_COUNTRY_IMAGES = {
 }
 
 export default function AboutMe() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoscroll({ speed: 0.5, playOnInit: true, stopOnMouseEnter: true, startDelay: 0 })])
-
   return (
     <div className="flex flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4">
       <div className="w-1/2 flex flex-col gap-[1px]">
@@ -122,20 +119,13 @@ export default function AboutMe() {
         <div className="p-2 bg-background">
           <div className="flex flex-row gap-2 fade-in" style={{ animationDelay: '0.6s' }}>
             <p className="text-xs whitespace-nowrap">Core principles</p>
-            <div className="embla" ref={emblaRef} onMouseLeave={() => emblaApi?.plugins().autoScroll.play()}>
-              <div className="embla__container">
-                <div className="embla__slide"><p className="text-xs">Occam's Razor •</p></div>
-                <div className="embla__slide"><p className="text-xs">First Principles Thinking •</p></div>
-                <div className="embla__slide"><p className="text-xs">Anti-Fragility •</p></div>
-                <div className="embla__slide"><p className="text-xs">The Tragedy of the Commons •</p></div>
-                <div className="embla__slide"><p className="text-xs">The North Star Principle •</p></div>
-                <div className="embla__slide"><p className="text-xs">Occam's Razor •</p></div>
-                <div className="embla__slide"><p className="text-xs">First Principles Thinking •</p></div>
-                <div className="embla__slide"><p className="text-xs">Anti-Fragility •</p></div>
-                <div className="embla__slide"><p className="text-xs">The Tragedy of the Commons •</p></div>
-                <div className="embla__slide"><p className="text-xs">The North Star Principle •</p></div>
-              </div>
-            </div>
+            <Marquee slides={[
+                <p className="text-xs">Occam's Razor •</p>,
+                <p className="text-xs">First Principles Thinking •</p>,
+                <p className="text-xs">Anti-Fragility •</p>,
+                <p className="text-xs">The Tragedy of the Commons •</p>,
+                <p className="text-xs">The North Star Principle •</p>
+            ]} />
           </div>
         </div>
       </div>  
@@ -222,6 +212,7 @@ function BasedOnEarth() {
             globeRef.current.controls().autoRotate = true;
             setHoveredCountry(null);
         }
+        return;
     }
 
     const renderTooltip = () => {
