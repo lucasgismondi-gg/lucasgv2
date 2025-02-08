@@ -4,11 +4,11 @@ import { useEffect, useState, useRef } from "react";
 import globeTopology from "./globe-topology.json";
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoscroll from 'embla-carousel-auto-scroll'
+import { Hover3dEffect } from "@/components/ui/hover-3d-effect"
 
-// TODO: Image hover component
 // TODO: Get all images for experience, frontend, backend, cloud, about me
-// TODO: Optimize for mobile
 // TODO: Add links where appropriate
+// TODO: Optimize for mobile
 // TODO: Globe component
 // TODO: Add experience section interactions
 // TODO: Add better font
@@ -100,8 +100,28 @@ function AboutMe() {
   return (
     <div className="flex flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4">
       <div className="w-1/2 flex flex-col gap-[1px]">
-        <div className="flex h-full w-full items-center justify-center p-2 bg-background">
+        <div className="flex flex-col h-full w-full bg-background">
           <p className="text-xs fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
+          <div className="h-full w-full grid grid-cols-3">
+            <Hover3dEffect className="h-full">
+              <div className="flex h-full w-full col-span-1 bg-red-500 fade-in" style={{ animationDelay: '0.6s' }} />
+            </Hover3dEffect>
+            <Hover3dEffect className="h-full">
+              <div className="flex h-full w-full col-span-1 bg-blue-500 fade-in" style={{ animationDelay: '0.7s' }} />
+            </Hover3dEffect>
+            <Hover3dEffect className="h-full">
+              <div className="flex h-full w-full col-span-1 bg-green-500 fade-in" style={{ animationDelay: '0.8s' }} />
+            </Hover3dEffect>
+            <Hover3dEffect className="h-full">
+              <div className="flex h-full w-full col-span-1 bg-blue-500 fade-in" style={{ animationDelay: '0.7s' }} />
+            </Hover3dEffect>
+            <Hover3dEffect className="h-full">
+              <div className="flex h-full w-full col-span-1 bg-green-500 fade-in" style={{ animationDelay: '0.8s' }} />
+            </Hover3dEffect>
+            <Hover3dEffect className="h-full">
+              <div className="flex h-full w-full col-span-1 bg-red-500 fade-in" style={{ animationDelay: '0.9s' }} />
+            </Hover3dEffect>
+          </div>
         </div>
         <div className="p-2 bg-background">
           <div className="flex flex-row gap-2 fade-in" style={{ animationDelay: '0.6s' }}>
