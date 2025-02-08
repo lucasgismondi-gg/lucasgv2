@@ -178,3 +178,17 @@ body {
     opacity: 1;
   }
 }
+
+/* Embla carousel */
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 1 0 auto;
+  min-width: 0;
+  margin-right: 3px;
+}

@@ -2,8 +2,9 @@ import { Link } from "@/components/ui/link"
 import Globe, { GlobeMethods } from 'react-globe.gl';
 import { useEffect, useState, useRef } from "react";
 import globeTopology from "./globe-topology.json";
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoscroll from 'embla-carousel-auto-scroll'
 
-// TODO: Marquee component
 // TODO: Image hover component
 // TODO: Get all images for experience, frontend, backend, cloud, about me
 // TODO: Optimize for mobile
@@ -55,6 +56,7 @@ function AboutMe() {
   const [globeHeight, setGlobeHeight] = useState(300);
   const globeContainerRef = useRef<HTMLDivElement>(null);
   const globeRef = useRef<GlobeMethods>(undefined);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoscroll({ speed: 0.5, playOnInit: true, stopOnMouseEnter: true, startDelay: 0 })])
 
   useEffect(() => {
     if (globeRef.current) {
@@ -102,7 +104,23 @@ function AboutMe() {
           <p className="text-xs fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
         </div>
         <div className="p-2 bg-background">
-          <p className="text-xs fade-in" style={{ animationDelay: '0.6s' }}>Core principles</p>
+          <div className="flex flex-row gap-2 fade-in" style={{ animationDelay: '0.6s' }}>
+            <p className="text-xs whitespace-nowrap">Core principles</p>
+            <div className="embla" ref={emblaRef} onMouseLeave={() => emblaApi?.plugins().autoScroll.play()}>
+              <div className="embla__container">
+                <div className="embla__slide"><p className="text-xs">Occam's Razor •</p></div>
+                <div className="embla__slide"><p className="text-xs">First Principles Thinking •</p></div>
+                <div className="embla__slide"><p className="text-xs">Anti-Fragility •</p></div>
+                <div className="embla__slide"><p className="text-xs">The Tragedy of the Commons •</p></div>
+                <div className="embla__slide"><p className="text-xs">The North Star Principle •</p></div>
+                <div className="embla__slide"><p className="text-xs">Occam's Razor •</p></div>
+                <div className="embla__slide"><p className="text-xs">First Principles Thinking •</p></div>
+                <div className="embla__slide"><p className="text-xs">Anti-Fragility •</p></div>
+                <div className="embla__slide"><p className="text-xs">The Tragedy of the Commons •</p></div>
+                <div className="embla__slide"><p className="text-xs">The North Star Principle •</p></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>  
       <div className="w-1/2 bg-background">
