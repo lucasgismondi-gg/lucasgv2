@@ -120,16 +120,16 @@ export default function AboutMe() {
           <div className="flex flex-row gap-2 fade-in" style={{ animationDelay: '0.6s' }}>
             <p className="text-xs whitespace-nowrap">Core principles</p>
             <Marquee slides={[
-                <p className="text-xs">Occam's Razor •</p>,
-                <p className="text-xs">First Principles Thinking •</p>,
-                <p className="text-xs">Anti-Fragility •</p>,
-                <p className="text-xs">The Tragedy of the Commons •</p>,
-                <p className="text-xs">The North Star Principle •</p>,
-                <p className="text-xs">Occam's Razor •</p>,
-                <p className="text-xs">First Principles Thinking •</p>,
-                <p className="text-xs">Anti-Fragility •</p>,
-                <p className="text-xs">The Tragedy of the Commons •</p>,
-                <p className="text-xs">The North Star Principle •</p>
+                { id: 'occam', render: <p className="text-xs">Occam's Razor •</p> },
+                { id: 'first-principles', render: <p className="text-xs">First Principles Thinking •</p> },
+                { id: 'anti-fragility', render: <p className="text-xs">Anti-Fragility •</p> },
+                { id: 'tragedy', render: <p className="text-xs">The Tragedy of the Commons •</p> },
+                { id: 'north-star', render: <p className="text-xs">The North Star Principle •</p> },
+                { id: 'occam', render: <p className="text-xs">Occam's Razor •</p> },
+                { id: 'first-principles', render: <p className="text-xs">First Principles Thinking •</p> },
+                { id: 'anti-fragility', render: <p className="text-xs">Anti-Fragility •</p> },
+                { id: 'tragedy', render: <p className="text-xs">The Tragedy of the Commons •</p> },
+                { id: 'north-star', render: <p className="text-xs">The North Star Principle •</p> }
             ]} />
           </div>
         </div>
