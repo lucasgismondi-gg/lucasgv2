@@ -3,11 +3,13 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Add a nice cursor
-// TODO: Optimize for mobile
 // TODO: Get all images for experience, frontend, backend, cloud, about me
 // TODO: Add experience section interactions
+
+// TODO: Look at larger screen widths
+// TODO: Optimize for mobile
 // TODO: Add better font
+// TODO: Add analytics
 // TODO: Get images for Italy, Austria, Mexico, Canada
 
 // TODO: Add stock price marquee to footer (potential)
