@@ -79,8 +79,8 @@ const VISITED_COUNTRY_IMAGES = {
 
 export default function AboutMe() {
   return (
-    <div className="flex flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4">
-      <div className="w-1/2 flex flex-col gap-[1px]">
+    <div className="flex flex-col md:flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4">
+      <div className="w-full h-[50vh] md:h-auto md:w-1/2 flex flex-col gap-[1px]">
         <div className="flex flex-col h-full w-full bg-background">
           <p className="text-xs fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
           <div className="h-full w-full grid grid-cols-3">
@@ -134,7 +134,7 @@ export default function AboutMe() {
           </div>
         </div>
       </div>  
-      <div className="w-1/2 bg-background">
+      <div className="w-full md:w-1/2 bg-background">
         <BasedOnEarth />
       </div>
     </div>
