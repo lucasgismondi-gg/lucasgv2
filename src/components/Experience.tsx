@@ -21,73 +21,73 @@ export default function Experience({ setHoveredExperience, setClickedExperience 
             slides={[
               {
                 id: 'lazer',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/lazer-logo.png" alt="Lazer Technologies Logo" width={100}/>
                         </div>,
               },
               {
                 id: 'unmet',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/unmet-logo.png" alt="Unmet Logo" width={100}/>
                         </div>,
               },
               {
                 id: 'wealthagile',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/wealthagile-logo.png" alt="WealthAgile Logo" width={150}/>
                         </div>,
               },
               {
                 id: 'bitbuy',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                           <img src="/images/experience/bitbuy-logo.png" alt="Bitbuy Logo" width={120}/>
                         </div>,
               },
               {
                 id: 'tablo',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/tablo-logo.png" alt="Tablo Creative Logo" width={100}/>
                         </div>,
               },
               {
                 id: 'loopio',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/loopio-logo.png" alt="Loopio Logo" width={100}/>
                         </div>,
               },
               {
                 id: 'lazer',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                   <img src="/images/experience/lazer-logo.png" alt="Lazer Technologies Logo" width={100}/>
               </div>,
               },
               {
                 id: 'unmet',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/unmet-logo.png" alt="Unmet Logo" width={100}/>
                         </div>,
               },
               {
                 id: 'wealthagile',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/wealthagile-logo.png" alt="WealthAgile Logo" width={150}/>
                         </div>,
               },
               {
                 id: 'bitbuy',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/bitbuy-logo.png" alt="Bitbuy Logo" width={120}/>
                         </div>,
               },
               {
                 id: 'tablo',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/tablo-logo.png" alt="Tablo Creative Logo" width={100}/>
                         </div>,
               },
               {
                 id: 'loopio',
-                render: <div className="px-6">
+                render: <div className="px-6 h-full w-full flex items-center justify-center">
                             <img src="/images/experience/loopio-logo.png" alt="Loopio Logo" width={100}/>
                         </div>,
               },
