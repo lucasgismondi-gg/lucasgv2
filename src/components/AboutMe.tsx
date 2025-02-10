@@ -82,7 +82,10 @@ export default function AboutMe() {
     <div className="flex flex-col md:flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4">
       <div className="w-full h-[50vh] md:h-auto md:w-1/2 flex flex-col gap-[1px]">
         <div className="flex flex-col h-full w-full bg-background">
-          <p className="text-xs fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
+          <div className="p-2">
+            <p className="text-xs fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
+            <p className="text-xs fade-in" style={{ animationDelay: '0.6s' }}>Builder and explorer. University of Toronto graduate in computer science.</p>
+          </div>
           <div className="h-full w-full grid grid-cols-3">
             <Hover3dEffect className="h-full">
               <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.6s' }}>
