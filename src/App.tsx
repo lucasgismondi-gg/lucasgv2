@@ -5,7 +5,6 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Get all images for experience, frontend, backend, cloud, about me
 // TODO: Add experience section interactions
 
 // TODO: Look at larger screen widths

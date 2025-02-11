@@ -1,6 +1,4 @@
-// Frontend: React, Next.js, Tailwind CSS, Typescript, React Native, Svelte
-// Backend: Node.js, Express, Python, FastAPI, PHP, PostgreSQL, MySQL, MongoDB, Docker, Redis, Github Actions
-// Cloud: AWS, Google Cloud, Expo EAS
+// Frontend: Tailwind CSS, React Native
 
 import { Marquee } from "@/components/ui/marquee"
 
@@ -12,7 +10,7 @@ type ExperienceProps = {
 export default function Experience({ setHoveredExperience, setClickedExperience }: ExperienceProps) {
     return (
       <div className="flex flex-col h-[50vh] md:h-1/2 gap-[1px]">
-        <div className="flex w-full h-full border-animation bg-background flex flex-col">
+        <div className="w-full h-full border-animation bg-background flex flex-col">
           <p className="text-xs p-2 fade-in" style={{ animationDelay: '0.1s' }}>Experience</p>
           <Marquee
             onMouseEnter={(id: string) => setHoveredExperience(id)}
@@ -22,85 +20,133 @@ export default function Experience({ setHoveredExperience, setClickedExperience 
               {
                 id: 'lazer',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/lazer-logo.png" alt="Lazer Technologies Logo" width={100}/>
+                            <img src="/images/experience/lazer-logo.png" alt="Lazer Technologies Logo" className="max-h-[25px]"/>
                         </div>,
               },
               {
                 id: 'unmet',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/unmet-logo.png" alt="Unmet Logo" width={100}/>
+                            <img src="/images/experience/unmet-logo.png" alt="Unmet Logo" className="max-h-[25px]"/>
                         </div>,
               },
               {
                 id: 'wealthagile',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/wealthagile-logo.png" alt="WealthAgile Logo" width={150}/>
+                            <img src="/images/experience/wealthagile-logo.png" alt="WealthAgile Logo" className="max-h-[32px]"/>
                         </div>,
               },
               {
                 id: 'bitbuy',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                          <img src="/images/experience/bitbuy-logo.png" alt="Bitbuy Logo" width={120}/>
+                          <img src="/images/experience/bitbuy-logo.png" alt="Bitbuy Logo" className="max-h-[32px]"/>
                         </div>,
               },
               {
                 id: 'tablo',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/tablo-logo.png" alt="Tablo Creative Logo" width={100}/>
+                            <img src="/images/experience/tablo-logo.png" alt="Tablo Creative Logo" className="max-h-[30px]"/>
                         </div>,
               },
               {
                 id: 'loopio',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/loopio-logo.png" alt="Loopio Logo" width={100}/>
+                            <img src="/images/experience/loopio-logo.png" alt="Loopio Logo" className="max-h-[30px]"/>
                         </div>,
               },
               {
                 id: 'lazer',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                  <img src="/images/experience/lazer-logo.png" alt="Lazer Technologies Logo" width={100}/>
+                  <img src="/images/experience/lazer-logo.png" alt="Lazer Technologies Logo" className="max-h-[25px]"/>
               </div>,
               },
               {
                 id: 'unmet',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/unmet-logo.png" alt="Unmet Logo" width={100}/>
+                            <img src="/images/experience/unmet-logo.png" alt="Unmet Logo" className="max-h-[25px]"/>
                         </div>,
               },
               {
                 id: 'wealthagile',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/wealthagile-logo.png" alt="WealthAgile Logo" width={150}/>
+                            <img src="/images/experience/wealthagile-logo.png" alt="WealthAgile Logo" className="max-h-[32px]"/>
                         </div>,
               },
               {
                 id: 'bitbuy',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/bitbuy-logo.png" alt="Bitbuy Logo" width={120}/>
+                            <img src="/images/experience/bitbuy-logo.png" alt="Bitbuy Logo" className="max-h-[32px]"/>
                         </div>,
               },
               {
                 id: 'tablo',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/tablo-logo.png" alt="Tablo Creative Logo" width={100}/>
+                            <img src="/images/experience/tablo-logo.png" alt="Tablo Creative Logo" className="max-h-[30px]"/>
                         </div>,
               },
               {
                 id: 'loopio',
                 render: <div className="px-6 h-full w-full flex items-center justify-center">
-                            <img src="/images/experience/loopio-logo.png" alt="Loopio Logo" width={100}/>
+                            <img src="/images/experience/loopio-logo.png" alt="Loopio Logo" className="max-h-[30px]"/>
                         </div>,
               },
           ]} />
         </div>
-        <div className="flex w-full h-full border-animation border-animation-delay-1 bg-background">
+        <div className="flex w-full h-full flex-col border-animation border-animation-delay-1 bg-background">
           <p className="text-xs p-2 fade-in" style={{ animationDelay: '0.2s' }}>Frontend</p>
+          <div className="flex w-full h-full flex-row justify-center mt-2">
+            <div className="px-6">
+              <img src="/images/frontend/react-logo.png" alt="React Logo" className="max-h-[30px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/frontend/reactnative-logo.png" alt="React Native Logo" className="max-h-[30px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/frontend/typescript-logo.png" alt="Typescript Logo" className="max-h-[25px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/frontend/next-logo.png" alt="Nextjs Logo" className="max-h-[25px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/frontend/tailwind-logo.png" alt="Tailwind Logo" className="max-h-[30px]"/>
+            </div>
+          </div>
         </div>
-        <div className="flex w-full h-full border-animation border-animation-delay-2 bg-background">
+        <div className="flex w-full h-full flex-col border-animation border-animation-delay-2 bg-background">
           <p className="text-xs p-2 fade-in" style={{ animationDelay: '0.3s' }}>Backend</p>
+          <div className="flex w-full h-full flex-row justify-center mt-2">
+            <div className="px-6">
+              <img src="/images/backend/nodejs-logo.png" alt="Nodejs Logo" className="max-h-[35px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/backend/python-logo.png" alt="Python Logo" className="max-h-[30px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/backend/php-logo.png" alt="PHP Logo" className="max-h-[30px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/backend/postgresql-logo.png" alt="PostgreSQL Logo" className="max-h-[35px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/backend/mongodb-logo.png" alt="MongoDB Logo" className="max-h-[30px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/backend/docker-logo.png" alt="Docker Logo" className="max-h-[30px]"/>
+            </div>
+          </div>
         </div>
-        <div className="flex w-full h-full border-animation border-animation-delay-3 bg-background">
+        <div className="flex w-full h-full flex-col border-animation border-animation-delay-3 bg-background">
           <p className="text-xs p-2 fade-in" style={{ animationDelay: '0.4s' }}>Cloud</p>
+          <div className="flex w-full h-full flex-row justify-center mt-2">
+            <div className="px-6">
+              <img src="/images/cloud/aws-logo.png" alt="AWS Logo" className="max-h-[35px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/cloud/gcp-logo.png" alt="GCP Logo" className="max-h-[30px]"/>
+            </div>
+            <div className="px-6">
+              <img src="/images/cloud/expo-logo.png" alt="Expo Logo" className="max-h-[30px]"/>
+            </div>
+          </div>
         </div>
       </div>
     )
