@@ -5,13 +5,13 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Add experience section interactions
 
 // TODO: Look at larger screen widths
 // TODO: Optimize for mobile
+// TODO: Get images for Italy, Austria, Canada
+// TODO: Add experience section
 // TODO: Add better font
 // TODO: Add analytics
-// TODO: Get images for Italy, Austria, Canada
 
 // TODO: Add stock price marquee to footer (potential)
 // TODO: Add spotify widget on footer (potential)
@@ -23,7 +23,11 @@ function App() {
   return (
     <div className="flex flex-col md:h-screen gap-[1px]">
       <Header />
-      <Experience setHoveredExperience={(experience: string | null) => setHoveredExperience(experience)} setClickedExperience={(experience: string | null) => setClickedExperience(experience)} />
+      <Experience
+        setHoveredExperience={(experience: string | null) => setHoveredExperience(experience)}
+        setClickedExperience={(experience: string | null) => setClickedExperience(experience)}
+        experience={clickedExperience || hoveredExperience}
+      />
       <AboutMe />
       <Footer />
       {(clickedExperience || hoveredExperience) && (
