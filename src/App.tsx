@@ -11,7 +11,7 @@ import Footer from "@/components/Footer"
 // TODO: Optimize for mobile
 // TODO: Add better font
 // TODO: Add analytics
-// TODO: Get images for Italy, Austria, Mexico, Canada
+// TODO: Get images for Italy, Austria, Canada
 
 // TODO: Add stock price marquee to footer (potential)
 // TODO: Add spotify widget on footer (potential)
