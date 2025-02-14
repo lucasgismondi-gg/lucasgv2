@@ -107,7 +107,7 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
     return (
       <div className="flex flex-col h-[50vh] md:h-1/2 gap-[1px]">
         <div className="w-full h-full border-animation bg-background flex flex-col">
-          <p className="text-xs px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.1s' }}>Experience</p>
+          <p className="text-xs font-medium px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.1s' }}>Experience</p>
           <Marquee
             className="mt-2"
             onMouseEnter={(id: string) => setHoveredExperience(id)}
@@ -129,7 +129,7 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
           ]} />
         </div>
         <div className="flex w-full h-full flex-col border-animation border-animation-delay-1 bg-background">
-          <p className="text-xs px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.2s' }}>Frontend</p>
+          <p className="text-xs font-medium px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.2s' }}>Frontend</p>
           <div className="flex w-full h-full flex-row justify-center md:mt-2 flex-wrap">
             <FrontendLogo id="react" image="react-logo.png" alt="React Logo" animationDelay="0.2s" className="max-h-[25px] md:max-h-[30px]"/>
             <FrontendLogo id="reactnative" image="reactnative-logo.png" alt="React Native Logo" animationDelay="0.3s" className="max-h-[25px] md:max-h-[30px]"/>
@@ -139,7 +139,7 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
           </div>
         </div>
         <div className="flex w-full h-full flex-col border-animation border-animation-delay-2 bg-background">
-          <p className="text-xs px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.3s' }}>Backend</p>
+          <p className="text-xs font-medium px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.3s' }}>Backend</p>
           <div className="flex flex-wrap w-full h-full flex-row justify-center md:mt-2">
             <BackendLogo id="nodejs" image="nodejs-logo.png" alt="Nodejs Logo" animationDelay="0.3s" className="max-h-[25px] md:max-h-[35px]"/>
             <BackendLogo id="python" image="python-logo.png" alt="Python Logo" animationDelay="0.4s" className="max-h-[25px] md:max-h-[30px]"/>
@@ -150,7 +150,7 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
           </div>
         </div>
         <div className="flex w-full h-full flex-col border-animation border-animation-delay-3 bg-background">
-          <p className="text-xs px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.4s' }}>Cloud</p>
+          <p className="text-xs font-medium px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.4s' }}>Cloud</p>
           <div className="flex w-full h-full flex-row justify-center mt-2">
             <CloudLogo id="aws" image="aws-logo.png" alt="AWS Logo" animationDelay="0.4s" className="max-h-[35px]"/>
             <CloudLogo id="gcp" image="gcp-logo.png" alt="GCP Logo" animationDelay="0.5s" className="max-h-[30px]"/>

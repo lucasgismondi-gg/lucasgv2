@@ -83,7 +83,7 @@ export default function AboutMe() {
       <div className="w-full h-[50vh] md:h-auto md:w-1/2 flex flex-col gap-[1px]">
         <div className="flex flex-col h-full w-full bg-background">
           <div className="p-2">
-            <p className="text-xs fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
+            <p className="text-xs font-medium fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
             <p className="text-xs fade-in" style={{ animationDelay: '0.6s' }}>Builder and explorer. University of Toronto graduate in computer science.</p>
           </div>
           <div className="h-full w-full grid grid-cols-3">
@@ -121,7 +121,7 @@ export default function AboutMe() {
         </div>
         <div className="p-2 bg-background">
           <div className="flex flex-row gap-2 fade-in" style={{ animationDelay: '0.6s' }}>
-            <p className="text-xs whitespace-nowrap">Core principles</p>
+            <p className="text-xs font-medium whitespace-nowrap">Core principles</p>
             <Marquee slides={[
                 { id: 'occam', render: <p className="text-xs">Occam's Razor •</p> },
                 { id: 'first-principles', render: <p className="text-xs">First Principles Thinking •</p> },
