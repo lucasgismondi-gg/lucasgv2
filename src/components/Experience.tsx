@@ -86,21 +86,21 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
     const FrontendLogo = ({ id, image, alt, animationDelay, className }: { id: string, image: string, alt: string, animationDelay: string, className: string }) => (
       <div className={cn("px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
         {/* @ts-ignore */}
-        <img src={`/images/frontend/${image}`} alt={alt} className={cn(className)} style={{ transition: 'opacity 0.3s ease-in-out', opacity: experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? 0.1 : 1 }}/> 
+        <img src={`/images/frontend/${image}`} alt={alt} className={cn(className, experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? "opacity-5" : "opacity-100")}/> 
       </div>
     )
 
     const BackendLogo = ({ id, image, alt, animationDelay, className }: { id: string, image: string, alt: string, animationDelay: string, className: string }) => (
       <div className={cn("px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
         {/* @ts-ignore */}
-        <img src={`/images/backend/${image}`} alt={alt} className={cn(className)} style={{ transition: 'opacity 0.3s ease-in-out', opacity: experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? 0.1 : 1 }}/>
+        <img src={`/images/backend/${image}`} alt={alt} className={cn(className, experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? "opacity-5" : "opacity-100")}/>
       </div>
     )
 
     const CloudLogo = ({ id, image, alt, animationDelay, className }: { id: string, image: string, alt: string, animationDelay: string, className: string }) => (
       <div className={cn("px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
         {/* @ts-ignore */}
-        <img src={`/images/cloud/${image}`} alt={alt} className={cn(className)} style={{ transition: 'opacity 0.3s ease-in-out', opacity: experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? 0.1 : 1 }}/>
+        <img src={`/images/cloud/${image}`} alt={alt} className={cn(className, experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? "opacity-5" : "opacity-100")}/>
       </div>
     )
 
