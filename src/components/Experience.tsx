@@ -77,28 +77,28 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
     const getExperienceItem = ({ id, animationDelay, image, imageClassName }: { id: string, animationDelay: string, image: string, imageClassName: string }) => {
       return {
         id,
-        render: <div className={cn("px-6 h-full w-full flex items-center justify-center", !hasLoaded && "fade-in")} style={{ animationDelay }}>
+        render: <div className={cn("px-3 md:px-6 h-full w-full flex items-center justify-center", !hasLoaded && "fade-in")} style={{ animationDelay }}>
                     <img src={`/images/experience/${image}`} alt={`${id} logo`} className={imageClassName}/>
                 </div>,
       }
     }
 
     const FrontendLogo = ({ id, image, alt, animationDelay, className }: { id: string, image: string, alt: string, animationDelay: string, className: string }) => (
-      <div className={cn("px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
+      <div className={cn("px-3 md:px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
         {/* @ts-ignore */}
         <img src={`/images/frontend/${image}`} alt={alt} className={cn(className, experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? "opacity-5" : "opacity-100")}/> 
       </div>
     )
 
     const BackendLogo = ({ id, image, alt, animationDelay, className }: { id: string, image: string, alt: string, animationDelay: string, className: string }) => (
-      <div className={cn("px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
+      <div className={cn("px-3 md:px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
         {/* @ts-ignore */}
         <img src={`/images/backend/${image}`} alt={alt} className={cn(className, experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? "opacity-5" : "opacity-100")}/>
       </div>
     )
 
     const CloudLogo = ({ id, image, alt, animationDelay, className }: { id: string, image: string, alt: string, animationDelay: string, className: string }) => (
-      <div className={cn("px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
+      <div className={cn("px-3 md:px-6", !hasLoaded && "fade-in")} style={{ animationDelay }}>
         {/* @ts-ignore */}
         <img src={`/images/cloud/${image}`} alt={alt} className={cn(className, experience && !EXPERIENCE_TO_LOGO_MAP[experience][id] ? "opacity-5" : "opacity-100")}/>
       </div>
@@ -107,8 +107,9 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
     return (
       <div className="flex flex-col h-[50vh] md:h-1/2 gap-[1px]">
         <div className="w-full h-full border-animation bg-background flex flex-col">
-          <p className="text-xs p-2 fade-in" style={{ animationDelay: '0.1s' }}>Experience</p>
+          <p className="text-xs px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.1s' }}>Experience</p>
           <Marquee
+            className="mt-2"
             onMouseEnter={(id: string) => setHoveredExperience(id)}
             onMouseLeave={() => setHoveredExperience(null)}
             onClick={(id: string) => setClickedExperience(id)}
@@ -128,28 +129,28 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
           ]} />
         </div>
         <div className="flex w-full h-full flex-col border-animation border-animation-delay-1 bg-background">
-          <p className="text-xs p-2 fade-in" style={{ animationDelay: '0.2s' }}>Frontend</p>
-          <div className="flex w-full h-full flex-row justify-center mt-2">
-            <FrontendLogo id="react" image="react-logo.png" alt="React Logo" animationDelay="0.2s" className="max-h-[30px]"/>
-            <FrontendLogo id="reactnative" image="reactnative-logo.png" alt="React Native Logo" animationDelay="0.3s" className="max-h-[30px]"/>
+          <p className="text-xs px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.2s' }}>Frontend</p>
+          <div className="flex w-full h-full flex-row justify-center md:mt-2 flex-wrap">
+            <FrontendLogo id="react" image="react-logo.png" alt="React Logo" animationDelay="0.2s" className="max-h-[25px] md:max-h-[30px]"/>
+            <FrontendLogo id="reactnative" image="reactnative-logo.png" alt="React Native Logo" animationDelay="0.3s" className="max-h-[25px] md:max-h-[30px]"/>
             <FrontendLogo id="typescript" image="typescript-logo.png" alt="Typescript Logo" animationDelay="0.4s" className="max-h-[25px]"/>
-            <FrontendLogo id="next" image="next-logo.png" alt="Nextjs Logo" animationDelay="0.5s" className="max-h-[25px]"/>
-            <FrontendLogo id="tailwind" image="tailwind-logo.png" alt="Tailwind Logo" animationDelay="0.6s" className="max-h-[30px]"/>
+            <FrontendLogo id="next" image="next-logo.png" alt="Nextjs Logo" animationDelay="0.5s" className="max-h-[20px] md:max-h-[25px]"/>
+            <FrontendLogo id="tailwind" image="tailwind-logo.png" alt="Tailwind Logo" animationDelay="0.6s" className="max-h-[25px] md:max-h-[30px]"/>
           </div>
         </div>
         <div className="flex w-full h-full flex-col border-animation border-animation-delay-2 bg-background">
-          <p className="text-xs p-2 fade-in" style={{ animationDelay: '0.3s' }}>Backend</p>
-          <div className="flex w-full h-full flex-row justify-center mt-2">
-            <BackendLogo id="nodejs" image="nodejs-logo.png" alt="Nodejs Logo" animationDelay="0.3s" className="max-h-[35px]"/>
-            <BackendLogo id="python" image="python-logo.png" alt="Python Logo" animationDelay="0.4s" className="max-h-[30px]"/>
-            <BackendLogo id="php" image="php-logo.png" alt="PHP Logo" animationDelay="0.5s" className="max-h-[30px]"/>
-            <BackendLogo id="postgresql" image="postgresql-logo.png" alt="PostgreSQL Logo" animationDelay="0.6s" className="max-h-[35px]"/>
-            <BackendLogo id="mongodb" image="mongodb-logo.png" alt="MongoDB Logo" animationDelay="0.7s" className="max-h-[30px]"/>
-            <BackendLogo id="docker" image="docker-logo.png" alt="Docker Logo" animationDelay="0.8s" className="max-h-[30px]"/>
+          <p className="text-xs px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.3s' }}>Backend</p>
+          <div className="flex flex-wrap w-full h-full flex-row justify-center md:mt-2">
+            <BackendLogo id="nodejs" image="nodejs-logo.png" alt="Nodejs Logo" animationDelay="0.3s" className="max-h-[25px] md:max-h-[35px]"/>
+            <BackendLogo id="python" image="python-logo.png" alt="Python Logo" animationDelay="0.4s" className="max-h-[25px] md:max-h-[30px]"/>
+            <BackendLogo id="php" image="php-logo.png" alt="PHP Logo" animationDelay="0.5s" className="max-h-[25px] md:max-h-[30px]"/>
+            <BackendLogo id="postgresql" image="postgresql-logo.png" alt="PostgreSQL Logo" animationDelay="0.6s" className="max-h-[25px] md:max-h-[35px]"/>
+            <BackendLogo id="mongodb" image="mongodb-logo.png" alt="MongoDB Logo" animationDelay="0.7s" className="max-h-[25px] md:max-h-[30px]"/>
+            <BackendLogo id="docker" image="docker-logo.png" alt="Docker Logo" animationDelay="0.8s" className="max-h-[25px] md:max-h-[30px]"/>
           </div>
         </div>
         <div className="flex w-full h-full flex-col border-animation border-animation-delay-3 bg-background">
-          <p className="text-xs p-2 fade-in" style={{ animationDelay: '0.4s' }}>Cloud</p>
+          <p className="text-xs px-2 py-1 md:p-2 fade-in" style={{ animationDelay: '0.4s' }}>Cloud</p>
           <div className="flex w-full h-full flex-row justify-center mt-2">
             <CloudLogo id="aws" image="aws-logo.png" alt="AWS Logo" animationDelay="0.4s" className="max-h-[35px]"/>
             <CloudLogo id="gcp" image="gcp-logo.png" alt="GCP Logo" animationDelay="0.5s" className="max-h-[30px]"/>

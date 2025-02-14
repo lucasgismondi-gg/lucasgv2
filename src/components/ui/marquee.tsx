@@ -1,7 +1,8 @@
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoscroll from 'embla-carousel-auto-scroll'
-
+import { cn } from '@/lib/utils'
 type MarqueeProps = {
+    className?: string;
     slides: {
         id: string,
         render: React.ReactNode
@@ -12,12 +13,12 @@ type MarqueeProps = {
     onClick?: (id: string) => void;
 }
 
-function Marquee({ slides, speed = 0.5, onMouseLeave, onMouseEnter, onClick }: MarqueeProps) {
+function Marquee({ slides, speed = 0.5, onMouseLeave, onMouseEnter, onClick, className }: MarqueeProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoscroll({ speed, playOnInit: true, stopOnMouseEnter: true, startDelay: 0 })])
 
     return (
         <div
-            className="embla"
+            className={cn("embla", className)}
             ref={emblaRef}
             onMouseLeave={() => {
                 emblaApi?.plugins().autoScroll.play()
