@@ -89,32 +89,32 @@ export default function AboutMe() {
           <div className="h-full w-full grid grid-cols-3">
             <Hover3dEffect className="h-full">
               <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.6s' }}>
-                <img src="/images/about-me/bunkers.jpg" alt="Lucas at Bunkers" className="absolute object-cover" />
+                <img src="/images/about-me/bunkers.jpg" alt="Lucas at Bunkers" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
               <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.7s' }}>
-                <img src="/images/about-me/elephant.jpg" alt="Lucas with an elephant in Thailand" className="absolute object-cover" />
+                <img src="/images/about-me/elephant.jpg" alt="Lucas with an elephant in Thailand" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
               <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.8s' }}>
-                <img src="/images/about-me/savaya.jpg" alt="Lucas at Savaya in Bali" className="absolute object-cover" />
+                <img src="/images/about-me/savaya.jpg" alt="Lucas at Savaya in Bali" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
               <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.7s' }}>
-                <img src="/images/about-me/surfing.jpg" alt="Lucas surfing" className="absolute object-cover" />
+                <img src="/images/about-me/surfing.jpg" alt="Lucas surfing" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
               <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.8s' }}>
-                <img src="/images/about-me/thailand.jpg" alt="Lucas in Thailand" className="absolute object-cover" />
+                <img src="/images/about-me/thailand.jpg" alt="Lucas in Thailand" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
               <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.9s' }}>
-                <img src="/images/about-me/waterfall.jpg" alt="Lucas at a waterfall in Thailand" className="absolute object-cover" />
+                <img src="/images/about-me/waterfall.jpg" alt="Lucas at a waterfall in Thailand" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
           </div>
