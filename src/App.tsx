@@ -5,7 +5,6 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Get images for Italy, Austria, Canada
 // TODO: Add experience section
 // TODO: Optimize for mobile
 // TODO: Add analytics
