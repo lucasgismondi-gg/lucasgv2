@@ -5,13 +5,12 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Add experience section
-// TODO: Add better font
 // TODO: Get images for Italy, Austria, Canada
+// TODO: Add experience section
 // TODO: Optimize for mobile
 // TODO: Add analytics
 
-// TODO: Add stock price marquee to footer (potential)
+// TODO: Add stock price marquee to footer (potential feature)
 
 function App() {
   const [hoveredExperience, setHoveredExperience] = useState<string | null>(null)
