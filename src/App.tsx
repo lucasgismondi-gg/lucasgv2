@@ -32,8 +32,10 @@ function App() {
         <Footer />
         {(clickedExperience || hoveredExperience) && (
           <div className="absolute bottom-0 left-0 right-0 h-[50vh] bg-background fade-in" style={{ animationDuration: '0.2s' }}>
-            {clickedExperience || hoveredExperience}
-            {clickedExperience && <button onClick={() => setClickedExperience(null)}>Close</button>}
+            <div className="max-w-6xl mx-auto border-r border-border border-l h-full box-content">
+              {clickedExperience || hoveredExperience}
+              {clickedExperience && <button onClick={() => setClickedExperience(null)}>Close</button>}
+            </div>
           </div>
         )}
       </div>
