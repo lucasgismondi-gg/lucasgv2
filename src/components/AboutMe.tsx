@@ -82,7 +82,7 @@ export default function AboutMe() {
     <div className="flex flex-col md:flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4">
       <div className="w-full h-[50vh] md:h-auto md:w-1/2 flex flex-col gap-[1px]">
         <div className="flex flex-col h-full w-full bg-background">
-          <div className="p-2">
+          <div className="py-1 md:py-2 px-2">
             <p className="text-xs font-medium fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
             <p className="text-xs fade-in" style={{ animationDelay: '0.6s' }}>Builder and explorer. University of Toronto graduate in computer science.</p>
           </div>
@@ -252,6 +252,7 @@ function BasedOnEarth() {
             atmosphereColor={GLOBE_PRIMARY_COLOR}
             onPolygonHover={handlePolygonHover}
           />
+          <p className="text-xs font-medium absolute top-0 left-0 px-2 py-1 md:py-2">Based on Earth</p>
           {hoveredCountry && renderTooltip()}
         </div>
     )

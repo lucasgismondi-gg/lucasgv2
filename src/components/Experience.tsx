@@ -40,6 +40,7 @@ const EXPERIENCE_TO_LOGO_MAP = {
     "react": true,
     "reactnative": true,
     "typescript": true,
+    "python": true,
     "postgresql": true,
     "expo": true,
   },
