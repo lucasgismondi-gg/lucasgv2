@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const linkVariants = cva(
-  "hover:text-primary inline-block hover:-skew-x-6 transition-all duration-300 origin-bottom",
+  "hover:text-primary fill-foreground hover:fill-primary inline-block hover:-skew-x-6 transition-all duration-300 origin-bottom",
   {
     variants: {
       variant: {

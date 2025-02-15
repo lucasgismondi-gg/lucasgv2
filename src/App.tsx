@@ -12,7 +12,6 @@ import Footer from "@/components/Footer"
 // TODO: Add analytics
 
 // TODO: Add stock price marquee to footer (potential)
-// TODO: Add spotify widget on footer (potential)
 
 function App() {
   const [hoveredExperience, setHoveredExperience] = useState<string | null>(null)
