@@ -26,10 +26,10 @@ function Marquee({ slides, speed = 0.5, onMouseLeave, onMouseEnter, onClick, cla
             }}
         >
             <div className="embla__container">
-                {slides.map((slide) => (
+                {slides.map((slide, index) => (
                     <div
                         className="embla__slide"
-                        key={slide.id}
+                        key={index}
                         onClick={() => onClick && onClick(slide.id)}
                         onMouseEnter={() => onMouseEnter && onMouseEnter(slide.id)}
                     >
