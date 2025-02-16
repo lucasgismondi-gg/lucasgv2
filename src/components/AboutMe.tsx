@@ -191,6 +191,25 @@ function BasedOnEarth({ hasLoaded }: BasedOnEarthProps) {
     const globeRef = useRef<GlobeMethods>(undefined);
 
     useEffect(() => {
+      const handleMouseMove = (event: MouseEvent) => {
+        if (!globeContainerRef.current) return;
+        
+        const globeContainer = document.getElementById('globe-container');
+        const isOutside = !globeContainer?.contains(event.target as Node);
+
+        if (isOutside) {
+          handlePolygonHover(null, null);
+        }
+      };
+
+      document.addEventListener("mousemove", handleMouseMove);
+
+      return () => {
+        document.removeEventListener("mousemove", handleMouseMove);
+      };
+    }, [])
+
+    useEffect(() => {
         if (globeRef.current) {
             globeRef.current.controls().autoRotate = true;
             globeRef.current.controls().autoRotateSpeed = -1;
@@ -275,7 +294,7 @@ function BasedOnEarth({ hasLoaded }: BasedOnEarthProps) {
     }
 
     return (
-        <div ref={globeContainerRef} className={cn("w-full h-full flex justify-center items-center relative border-r", !hasLoaded && "fade-in")} style={{ animationDelay: '0.9s' }}>
+        <div id="globe-container" ref={globeContainerRef} className={cn("w-full h-full flex justify-center items-center relative border-r", !hasLoaded && "fade-in")} style={{ animationDelay: '0.9s' }}>
           <Globe 
             ref={globeRef}
             width={globeWidth} 
