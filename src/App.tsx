@@ -6,7 +6,6 @@ import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
 // TODO: Link to core principle explanations
-// TODO: Add analytics
 // TODO: deploy to production
 // TODO: Optimize for mobile
 
