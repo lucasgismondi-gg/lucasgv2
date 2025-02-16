@@ -5,8 +5,6 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Link to core principle explanations
-// TODO: deploy to production
 // TODO: Optimize for mobile
 
 // TODO: Add stock price marquee to footer (potential feature)

@@ -286,7 +286,7 @@ function BasedOnEarth({ hasLoaded }: BasedOnEarthProps) {
             <div className="grid grid-cols-2 gap-1 bg-transparent min-w-64 p-0 absolute fade-in" style={{ top: tooltipPosition.y, left: tooltipPosition.x, animationDuration: '0.2s' }}>
                 {images.map((image, index) => (
                     <div className="col-span-1 relative h-32 w-32 flex justify-center items-center overflow-hidden rounded">
-                        <img src={image.src} alt={image.alt} key={index} className="absolute w-full" />
+                        <img src={image.src} alt={image.alt} key={index} className="absolute object-cover min-w-full min-h-full" />
                     </div>
                 ))}
             </div>
