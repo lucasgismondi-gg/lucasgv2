@@ -124,7 +124,7 @@ function ExperienceFeature({ clickedExperience, hoveredExperience, onClose }: Ex
                         <span className="text-xs md:text-sm text-slate-500">{experienceConfig.subtitle}</span>
                         <span className="text-xs md:text-sm text-slate-500">{experienceConfig.period}</span>
                     </div>
-                    {clickedExperience && <button onClick={onClose}>Close</button>}
+                    {clickedExperience && <button onClick={onClose}><CloseIcon /></button>}
                 </div>
                 <ul className="flex flex-col gap-1 text-sm text-slate-300 ml-6">
                     {experienceConfig.bullets.map((bullet, index) => (
@@ -135,6 +135,25 @@ function ExperienceFeature({ clickedExperience, hoveredExperience, onClose }: Ex
         </div>
     </div>
   )
+}
+
+function CloseIcon() {
+    return (
+        <svg
+            width='20'
+            height='20'
+            viewBox='0 0 20 20'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+        >
+            <path
+                fillRule='evenodd'
+                clipRule='evenodd'
+                d='M17.2855 3.95197C17.6273 3.61026 17.6273 3.05624 17.2855 2.71453C16.9438 2.37282 16.3898 2.37282 16.0481 2.71453L10.0002 8.76248L3.95221 2.71453C3.61051 2.37282 3.05649 2.37282 2.71478 2.71453C2.37307 3.05624 2.37307 3.61026 2.71478 3.95197L8.76273 9.99992L2.71478 16.0479C2.37307 16.3896 2.37307 16.9436 2.71478 17.2853C3.05649 17.627 3.61051 17.627 3.95221 17.2853L10.0002 11.2374L16.0481 17.2853C16.3898 17.627 16.9438 17.627 17.2855 17.2853C17.6273 16.9436 17.6273 16.3896 17.2855 16.0479L11.2376 9.99992L17.2855 3.95197Z'
+                fill="white"
+            />
+        </svg>
+    )
 }
 
 export default ExperienceFeature;

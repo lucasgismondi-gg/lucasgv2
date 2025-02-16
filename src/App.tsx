@@ -5,7 +5,6 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Add x svg
 // TODO: Add title of country hovering
 // TODO: Link to core principle explanations
 // TODO: Add favicon
