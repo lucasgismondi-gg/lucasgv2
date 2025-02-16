@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Marquee } from "@/components/ui/marquee"
 import { cn } from "@/lib/utils"
+import { useMobile } from "@/hooks/useMobile"
 
 const EXPERIENCE_TO_LOGO_MAP = {
   "lazer": {
@@ -67,6 +68,7 @@ type ExperienceProps = {
 
 export default function Experience({ setHoveredExperience, setClickedExperience, experience }: ExperienceProps) {
     const [hasLoaded, setHasLoaded] = useState(false)
+    const isMobile = useMobile()
 
     // Prevents fade in animation from happening after initial load
     useEffect(() => {
@@ -74,6 +76,16 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
         setHasLoaded(true)
       }, 2000)
     }, [])
+
+    const handleMouseEnter = (id: string) => {
+      if (isMobile) return
+      setHoveredExperience(id)
+    }
+
+    const handleMouseExit = () => {
+      if (isMobile) return
+      setHoveredExperience(null)
+    }
 
     const handleExperienceClick = (id: string) => {
       if (window.scrollY > 0) {
@@ -125,8 +137,8 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
           <div className="flex w-full h-full">
             <Marquee
               className="flex justify-center"
-              onMouseEnter={(id: string) => setHoveredExperience(id)}
-              onMouseLeave={() => setHoveredExperience(null)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseExit}
               onClick={handleExperienceClick}
               slides={[
                 getExperienceItem({ id: 'lazer', animationDelay: '0.5s', image: 'lazer-logo.png', imageClassName: 'max-h-[25px]' }),

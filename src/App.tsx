@@ -5,8 +5,6 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Optimize for mobile
-
 // TODO: Add stock price marquee to footer (potential feature)
 
 function App() {
