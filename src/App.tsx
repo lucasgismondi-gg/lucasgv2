@@ -5,10 +5,9 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Add title of country hovering
 // TODO: Link to core principle explanations
-// TODO: Add favicon
 // TODO: Add analytics
+// TODO: Fix console errors
 // TODO: deploy to production
 // TODO: Optimize for mobile
 
