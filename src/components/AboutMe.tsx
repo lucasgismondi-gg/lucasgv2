@@ -275,7 +275,7 @@ function BasedOnEarth({ hasLoaded }: BasedOnEarthProps) {
     }
 
     return (
-        <div ref={globeContainerRef} className={cn("w-full h-full flex justify-center items-center relative", !hasLoaded && "fade-in")} style={{ animationDelay: '0.9s' }}>
+        <div ref={globeContainerRef} className={cn("w-full h-full flex justify-center items-center relative border-r", !hasLoaded && "fade-in")} style={{ animationDelay: '0.9s' }}>
           <Globe 
             ref={globeRef}
             width={globeWidth} 

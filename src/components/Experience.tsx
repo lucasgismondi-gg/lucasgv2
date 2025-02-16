@@ -75,6 +75,19 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
       }, 2000)
     }, [])
 
+    const handleExperienceClick = (id: string) => {
+      if (window.scrollY > 0) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.addEventListener('scrollend', () => {
+          setClickedExperience(id);
+          window.removeEventListener('scrollend', () => {});
+        }, { once: true });
+        return;
+      } else {
+        setClickedExperience(id)
+      }
+    }
+
     const getExperienceItem = ({ id, animationDelay, image, imageClassName }: { id: string, animationDelay: string, image: string, imageClassName: string }) => {
       return {
         id,
@@ -114,7 +127,7 @@ export default function Experience({ setHoveredExperience, setClickedExperience,
               className="flex justify-center"
               onMouseEnter={(id: string) => setHoveredExperience(id)}
               onMouseLeave={() => setHoveredExperience(null)}
-              onClick={(id: string) => setClickedExperience(id)}
+              onClick={handleExperienceClick}
               slides={[
                 getExperienceItem({ id: 'lazer', animationDelay: '0.5s', image: 'lazer-logo.png', imageClassName: 'max-h-[25px]' }),
                 getExperienceItem({ id: 'unmet', animationDelay: '0.6s', image: 'unmet-logo.png', imageClassName: 'max-h-[25px]' }),
