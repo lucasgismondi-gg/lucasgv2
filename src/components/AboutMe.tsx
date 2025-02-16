@@ -4,6 +4,7 @@ import globeTopology from "@/globe-topology.json";
 import { Hover3dEffect } from "@/components/ui/hover-3d-effect"
 import { Marquee } from "@/components/ui/marquee"
 import ExperienceFeature from "@/components/ExperienceFeature"
+import { cn } from '@/lib/utils';
 
 const GLOBE_PRIMARY_COLOR = "#00FF88";
 const GLOBE_BACKGROUND_COLOR = "#0A0A0A";
@@ -97,49 +98,63 @@ type AboutMeProps = {
 }
 
 export default function AboutMe({ clickedExperience, hoveredExperience, onCloseExperienceFeature }: AboutMeProps) {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  
+  // Prevents fade in animation from happening after initial load
+  useEffect(() => {
+    setTimeout(() => {
+      setHasLoaded(true)
+    }, 2000)
+  }, [])
+  
   return (
-    <div className="flex flex-col md:flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4 relative">
-      <div className="w-full h-[50vh] md:h-auto md:w-1/2 flex flex-col gap-[1px]">
+    <div className="flex flex-col md:flex-row justify-between h-1/2 grow gap-[1px] border-animation border-animation-delay-4 relative">
+      <ExperienceFeature
+        clickedExperience={clickedExperience}
+        hoveredExperience={hoveredExperience}
+        onClose={onCloseExperienceFeature}
+      />
+      <div className={cn("w-full h-[50vh] md:h-auto md:w-1/2 flex flex-col gap-[1px]", (clickedExperience || hoveredExperience) && 'hidden')}>
         <div className="flex flex-col h-full w-full bg-background">
           <div className="py-1 md:py-2 px-2">
-            <p className="text-xs font-medium fade-in" style={{ animationDelay: '0.5s' }}>About me</p>
-            <p className="text-xs fade-in" style={{ animationDelay: '0.6s' }}>Builder and explorer. University of Toronto graduate in computer science.</p>
+            <p className={cn("text-xs font-medium", !hasLoaded && "fade-in")} style={{ animationDelay: '0.5s' }}>About me</p>
+            <p className={cn("text-xs", !hasLoaded && "fade-in")} style={{ animationDelay: '0.6s' }}>Builder and explorer. University of Toronto graduate in computer science.</p>
           </div>
           <div className="h-full w-full grid grid-cols-3">
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.6s' }}>
+              <div className={cn("flex h-full w-full col-span-1 relative justify-center items-center overflow-hidden", !hasLoaded && "fade-in")} style={{ animationDelay: '0.6s' }}>
                 <img src="/images/about-me/bunkers.jpg" alt="Lucas at Bunkers" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.7s' }}>
+              <div className={cn("flex h-full w-full col-span-1 relative justify-center items-center overflow-hidden", !hasLoaded && "fade-in")} style={{ animationDelay: '0.7s' }}>
                 <img src="/images/about-me/elephant.jpg" alt="Lucas with an elephant in Thailand" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.8s' }}>
+              <div className={cn("flex h-full w-full col-span-1 relative justify-center items-center overflow-hidden", !hasLoaded && "fade-in")} style={{ animationDelay: '0.8s' }}>
                 <img src="/images/about-me/savaya.jpg" alt="Lucas at Savaya in Bali" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.7s' }}>
+              <div className={cn("flex h-full w-full col-span-1 relative justify-center items-center overflow-hidden", !hasLoaded && "fade-in")} style={{ animationDelay: '0.7s' }}>
                 <img src="/images/about-me/surfing.jpg" alt="Lucas surfing" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.8s' }}>
+              <div className={cn("flex h-full w-full col-span-1 relative justify-center items-center overflow-hidden", !hasLoaded && "fade-in")} style={{ animationDelay: '0.8s' }}>
                 <img src="/images/about-me/thailand.jpg" alt="Lucas in Thailand" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
             <Hover3dEffect className="h-full">
-              <div className="flex h-full w-full col-span-1 fade-in relative justify-center items-center overflow-hidden" style={{ animationDelay: '0.9s' }}>
+              <div className={cn("flex h-full w-full col-span-1 relative justify-center items-center overflow-hidden", !hasLoaded && "fade-in")} style={{ animationDelay: '0.9s' }}>
                 <img src="/images/about-me/waterfall.jpg" alt="Lucas at a waterfall in Thailand" className="absolute object-cover min-h-full min-w-full" />
               </div>
             </Hover3dEffect>
           </div>
         </div>
         <div className="p-2 bg-background">
-          <div className="flex flex-row gap-2 fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className={cn("flex flex-row gap-2", !hasLoaded && "fade-in")} style={{ animationDelay: '0.6s' }}>
             <p className="text-xs font-medium whitespace-nowrap">Core principles</p>
             <Marquee slides={[
                 { id: 'occam', render: <p className="text-xs">Occam's Razor •</p> },
@@ -156,19 +171,18 @@ export default function AboutMe({ clickedExperience, hoveredExperience, onCloseE
           </div>
         </div>
       </div>  
-      <div className="w-full md:w-1/2 bg-background">
-        <BasedOnEarth />
+      <div className={cn("w-full md:w-1/2 bg-background", (clickedExperience || hoveredExperience) && 'hidden')}>
+        <BasedOnEarth hasLoaded={hasLoaded} />
       </div>
-      <ExperienceFeature
-        clickedExperience={clickedExperience}
-        hoveredExperience={hoveredExperience}
-        onClose={onCloseExperienceFeature}
-      />
     </div>
   )
 }
 
-function BasedOnEarth() {
+type BasedOnEarthProps = {
+  hasLoaded: boolean;
+}
+
+function BasedOnEarth({ hasLoaded }: BasedOnEarthProps) {
     const [globeWidth, setGlobeWidth] = useState(300);
     const [globeHeight, setGlobeHeight] = useState(300);
     const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
@@ -204,7 +218,6 @@ function BasedOnEarth() {
     }, [globeContainerRef.current, globeRef.current]);
 
     useEffect(() => {
-
         if (!hoveredCountry) return;
 
         const handlePointerMove = (event: PointerEvent) => {
@@ -262,7 +275,7 @@ function BasedOnEarth() {
     }
 
     return (
-        <div ref={globeContainerRef} className="w-full h-full fade-in flex justify-center items-center relative" style={{ animationDelay: '0.9s' }}>
+        <div ref={globeContainerRef} className={cn("w-full h-full flex justify-center items-center relative", !hasLoaded && "fade-in")} style={{ animationDelay: '0.9s' }}>
           <Globe 
             ref={globeRef}
             width={globeWidth} 

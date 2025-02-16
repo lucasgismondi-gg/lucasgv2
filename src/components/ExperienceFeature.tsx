@@ -129,8 +129,8 @@ function ExperienceFeature({ clickedExperience, hoveredExperience, onClose }: Ex
   const experienceConfig = EXPERIENCE_CONFIG[experience as keyof typeof EXPERIENCE_CONFIG];
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 top-0 bg-background fade-in" style={{ animationDuration: '0.2s' }}>
-        <div className="max-w-6xl mx-auto border-r border-border border-l h-full box-content">
+    <div className="bg-background grow" style={{ animationDuration: '0.2s' }}>
+        <div className="max-w-6xl mx-auto h-full box-content">
             <div className="p-2 gap-3 flex flex-col">
                 <div className="flex flex-row justify-between items-start bg-background">
                     <div className="flex flex-col">

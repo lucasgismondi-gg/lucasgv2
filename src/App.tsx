@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="flex flex-row md:h-screen">
       <div className="hidden md:flex flex-grow h-full bg-background border-r border-border" />
-      <div className="flex flex-col max-w-6xl min-w-0 h-full gap-[1px]">
+      <div className="flex flex-col max-w-6xl min-w-0 h-full gap-[1px] min-h-screen">
         <Header />
         <Experience
           setHoveredExperience={(experience: string | null) => setHoveredExperience(experience)}
