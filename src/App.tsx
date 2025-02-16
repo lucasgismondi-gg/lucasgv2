@@ -5,7 +5,6 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Add experience section
 // TODO: Optimize for mobile
 // TODO: Add analytics
 
@@ -25,16 +24,12 @@ function App() {
           setClickedExperience={(experience: string | null) => setClickedExperience(experience)}
           experience={clickedExperience || hoveredExperience}
         />
-        <AboutMe />
+        <AboutMe
+          clickedExperience={clickedExperience}
+          hoveredExperience={hoveredExperience}
+          onCloseExperienceFeature={() => setClickedExperience(null)}
+        />
         <Footer />
-        {(clickedExperience || hoveredExperience) && (
-          <div className="absolute bottom-0 left-0 right-0 h-[50vh] bg-background fade-in" style={{ animationDuration: '0.2s' }}>
-            <div className="max-w-6xl mx-auto border-r border-border border-l h-full box-content">
-              {clickedExperience || hoveredExperience}
-              {clickedExperience && <button onClick={() => setClickedExperience(null)}>Close</button>}
-            </div>
-          </div>
-        )}
       </div>
       <div className="hidden md:flex flex-grow h-full border-l border-border bg-background" />
     </div>

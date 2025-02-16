@@ -3,6 +3,7 @@ import { useEffect, useState, useRef, ReactHTMLElement } from "react";
 import globeTopology from "@/globe-topology.json";
 import { Hover3dEffect } from "@/components/ui/hover-3d-effect"
 import { Marquee } from "@/components/ui/marquee"
+import ExperienceFeature from "@/components/ExperienceFeature"
 
 const GLOBE_PRIMARY_COLOR = "#00FF88";
 const GLOBE_BACKGROUND_COLOR = "#0A0A0A";
@@ -89,9 +90,15 @@ const VISITED_COUNTRY_IMAGES = {
     ]
 }
 
-export default function AboutMe() {
+type AboutMeProps = {
+  clickedExperience: string | null;
+  hoveredExperience: string | null;
+  onCloseExperienceFeature: () => void;
+}
+
+export default function AboutMe({ clickedExperience, hoveredExperience, onCloseExperienceFeature }: AboutMeProps) {
   return (
-    <div className="flex flex-col md:flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4">
+    <div className="flex flex-col md:flex-row justify-between h-1/2 gap-[1px] border-animation border-animation-delay-4 relative">
       <div className="w-full h-[50vh] md:h-auto md:w-1/2 flex flex-col gap-[1px]">
         <div className="flex flex-col h-full w-full bg-background">
           <div className="py-1 md:py-2 px-2">
@@ -152,6 +159,11 @@ export default function AboutMe() {
       <div className="w-full md:w-1/2 bg-background">
         <BasedOnEarth />
       </div>
+      <ExperienceFeature
+        clickedExperience={clickedExperience}
+        hoveredExperience={hoveredExperience}
+        onClose={onCloseExperienceFeature}
+      />
     </div>
   )
 }
