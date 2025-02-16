@@ -5,11 +5,13 @@ import Experience from "@/components/Experience"
 import AboutMe from "@/components/AboutMe"
 import Footer from "@/components/Footer"
 
-// TODO: Link to core principle explanations
+// TODO: Add x svg
 // TODO: Add title of country hovering
-// TODO: Add remaining experience information
-// TODO: Optimize for mobile
+// TODO: Link to core principle explanations
+// TODO: Add favicon
 // TODO: Add analytics
+// TODO: deploy to production
+// TODO: Optimize for mobile
 
 // TODO: Add stock price marquee to footer (potential feature)
 

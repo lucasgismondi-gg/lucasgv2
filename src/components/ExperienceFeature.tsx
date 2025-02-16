@@ -28,46 +28,34 @@ const EXPERIENCE_CONFIG: Record<string, ExperienceConfig> = {
         ]
     },
     'lazer': {
-        title: 'Loopio',
-        titleLink: 'https://www.loopio.com',
-        companyType: 'RFP Management Software',
-        subtitle: 'Full Stack Software Developer | Integrations & Projects',
-        period: '05/2018 - 08/2019, 06/2021 - 01/2022',
-        description: 'Loopio is a Knowledge Management platform that assists in managing the RFP process and is based in Toronto, Canada. While at Loopio, I was able to work on meaningful features that made an impact on the business. The experience I gained was everything I could have asked for as I was given a broad range of responsibilities and had the opportunity to work with a very talented group of people.',
+        title: 'Lazer',
+        titleLink: 'https://www.lazertechnologies.com',
+        companyType: 'Software Agency',
+        subtitle: 'Senior Software Engineering Consultant',
+        period: '01/2023 - Present',
+        description: '',
         bullets: [
-            'Refactored Loopio build process to allow support for Typescript. Introduced Typescript to the engineering team through a Lunch & Learn presentation.',
-            'Developed a new PDF import system for Loopio\'s Project Import feature.',
-            'Developed a Chrome Extension to assist with importing content into the customer library from anywhere on the web. Installations surpassed competitor solution within 5 days of being on the Chrome Store.',
-            'Implemented integrations with Slack & Microsoft Dynamics.',
-            'Gained extensive End to End, Integration & Unit testing experience. 100% code coverage required on all newly created features. Active member on Loopio’s internal Testing Guild where we developed testing standards for the Engineering Team.',
-            'Developed a bulk user import solution for large enterprise customers.',
-            'Utilized: JavaScript, React, Redux, HTML/CSS, PHP, MySQL, Git.'
+            'Providing Software Engineering Consultant services across many stacks. Notable clients include Google, Humi,Argo, Electric Capital.',
         ]
     },
     'unmet': {
-        title: 'Loopio',
-        titleLink: 'https://www.loopio.com',
-        companyType: 'RFP Management Software',
-        subtitle: 'Full Stack Software Developer | Integrations & Projects',
-        period: '05/2018 - 08/2019, 06/2021 - 01/2022',
-        description: 'Loopio is a Knowledge Management platform that assists in managing the RFP process and is based in Toronto, Canada. While at Loopio, I was able to work on meaningful features that made an impact on the business. The experience I gained was everything I could have asked for as I was given a broad range of responsibilities and had the opportunity to work with a very talented group of people.',
+        title: 'Unmet',
+        titleLink: 'https://www.unmet.ca',
+        companyType: 'Software Agency',
+        subtitle: 'Senior Software Engineering Consultant',
+        period: '03/2023 - 10/2023',
+        description: '',
         bullets: [
-            'Refactored Loopio build process to allow support for Typescript. Introduced Typescript to the engineering team through a Lunch & Learn presentation.',
-            'Developed a new PDF import system for Loopio\'s Project Import feature.',
-            'Developed a Chrome Extension to assist with importing content into the customer library from anywhere on the web. Installations surpassed competitor solution within 5 days of being on the Chrome Store.',
-            'Implemented integrations with Slack & Microsoft Dynamics.',
-            'Gained extensive End to End, Integration & Unit testing experience. 100% code coverage required on all newly created features. Active member on Loopio’s internal Testing Guild where we developed testing standards for the Engineering Team.',
-            'Developed a bulk user import solution for large enterprise customers.',
-            'Utilized: JavaScript, React, Redux, HTML/CSS, PHP, MySQL, Git.'
+            'Providing Software Engineering Consultant services across many stacks. Notable clients include Medisca, IKO Global.',
         ]
     },
     'wealthagile': {
-        title: 'Loopio',
-        titleLink: 'https://www.loopio.com',
-        companyType: 'RFP Management Software',
-        subtitle: 'Full Stack Software Developer | Integrations & Projects',
-        period: '05/2018 - 08/2019, 06/2021 - 01/2022',
-        description: 'Loopio is a Knowledge Management platform that assists in managing the RFP process and is based in Toronto, Canada. While at Loopio, I was able to work on meaningful features that made an impact on the business. The experience I gained was everything I could have asked for as I was given a broad range of responsibilities and had the opportunity to work with a very talented group of people.',
+        title: 'WealthAgile',
+        titleLink: 'https://www.wealthagile.com/',
+        companyType: 'Crypto Portfolio Manager',
+        subtitle: 'CTO',
+        period: '11/2023 - Present',
+        description: '',
         bullets: [
             'Refactored Loopio build process to allow support for Typescript. Introduced Typescript to the engineering team through a Lunch & Learn presentation.',
             'Developed a new PDF import system for Loopio\'s Project Import feature.',
@@ -79,37 +67,31 @@ const EXPERIENCE_CONFIG: Record<string, ExperienceConfig> = {
         ]
     },
     'tablo': {
-        title: 'Loopio',
-        titleLink: 'https://www.loopio.com',
-        companyType: 'RFP Management Software',
-        subtitle: 'Full Stack Software Developer | Integrations & Projects',
-        period: '05/2018 - 08/2019, 06/2021 - 01/2022',
-        description: 'Loopio is a Knowledge Management platform that assists in managing the RFP process and is based in Toronto, Canada. While at Loopio, I was able to work on meaningful features that made an impact on the business. The experience I gained was everything I could have asked for as I was given a broad range of responsibilities and had the opportunity to work with a very talented group of people.',
+        title: 'Tablo Creative',
+        titleLink: 'https://www.tablocreative.com/',
+        companyType: 'Software Agency',
+        subtitle: 'Full Stack Software Developer',
+        period: '11/2021 - 09/2022',
+        description: '',
         bullets: [
-            'Refactored Loopio build process to allow support for Typescript. Introduced Typescript to the engineering team through a Lunch & Learn presentation.',
-            'Developed a new PDF import system for Loopio\'s Project Import feature.',
-            'Developed a Chrome Extension to assist with importing content into the customer library from anywhere on the web. Installations surpassed competitor solution within 5 days of being on the Chrome Store.',
-            'Implemented integrations with Slack & Microsoft Dynamics.',
-            'Gained extensive End to End, Integration & Unit testing experience. 100% code coverage required on all newly created features. Active member on Loopio’s internal Testing Guild where we developed testing standards for the Engineering Team.',
-            'Developed a bulk user import solution for large enterprise customers.',
-            'Utilized: JavaScript, React, Redux, HTML/CSS, PHP, MySQL, Git.'
+            'Implemented new design system for metabase.com. Complete overhaul of the entire site.',
+            'Implemented internal Shopify Monogram app for trouvailleonline.com. Utilized Glitch for the backend. Try it by adding a Monogrammable item from the store, and navigating to the cart! Click “Add Complimentary Monogram” within the cart to view.',
+            'Implemented custom discount indicator for futz.com on their collections pages for their Shopify store.',
+            'Utilized: Jekyll, Liquid, JavaScript, HTML, CSS, NodeJS, Glitch, Webhooks.'
         ]
     },
     'bitbuy': {
-        title: 'Loopio',
-        titleLink: 'https://www.loopio.com',
-        companyType: 'RFP Management Software',
-        subtitle: 'Full Stack Software Developer | Integrations & Projects',
-        period: '05/2018 - 08/2019, 06/2021 - 01/2022',
-        description: 'Loopio is a Knowledge Management platform that assists in managing the RFP process and is based in Toronto, Canada. While at Loopio, I was able to work on meaningful features that made an impact on the business. The experience I gained was everything I could have asked for as I was given a broad range of responsibilities and had the opportunity to work with a very talented group of people.',
+        title: 'Bitbuy',
+        titleLink: 'https://www.bitbuy.ca/',
+        companyType: 'Crypto Exchange',
+        subtitle: 'Software Developer | Treasury, Risk, Collateral & Marketplace Systems',
+        period: '06/2022 - 12/2023',
+        description: '',
         bullets: [
-            'Refactored Loopio build process to allow support for Typescript. Introduced Typescript to the engineering team through a Lunch & Learn presentation.',
-            'Developed a new PDF import system for Loopio\'s Project Import feature.',
-            'Developed a Chrome Extension to assist with importing content into the customer library from anywhere on the web. Installations surpassed competitor solution within 5 days of being on the Chrome Store.',
-            'Implemented integrations with Slack & Microsoft Dynamics.',
-            'Gained extensive End to End, Integration & Unit testing experience. 100% code coverage required on all newly created features. Active member on Loopio’s internal Testing Guild where we developed testing standards for the Engineering Team.',
-            'Developed a bulk user import solution for large enterprise customers.',
-            'Utilized: JavaScript, React, Redux, HTML/CSS, PHP, MySQL, Git.'
+            'Worked directly with the Finance team to develop an internal daily reconciliation tool. This helped transition the company from a monthly reconciliation process to a daily one saving the team countless hours reconciling. Transactions, trades, balances, and FX conversions needed to be pulled from internal and third-party APIs and accurately reconciled into a variety of reports.',
+            'Implemented EAS (Expo Application Services) into the mobile build process. Documented entire process to help other engineering teams across the business migrate to EAS.',
+            'Reduced Web build time by ~25% (8 minutes).',
+            'Increased both Web & Mobile releases to a minimum of 1 release per week by creating and modifying a variety of Github workflows, which included Slack notifications, to improve CI/CD pipeline.'
         ]
     }
 }
