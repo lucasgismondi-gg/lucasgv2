@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://lucasgismondi-gg.github.io/lucasgv2",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "pnpm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
@@ -15,6 +17,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-auto-scroll": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.474.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
